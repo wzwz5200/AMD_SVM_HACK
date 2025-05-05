@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{931db958-772b-41c7-b151-469147d98536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Offset">
+      <UniqueIdentifier>{e0684deb-c10b-446d-a9d2-f809afc5af0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Offset\Offset">
+      <UniqueIdentifier>{c31bf000-5d77-4c0b-b1cb-18e5e5201691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{307567f3-193b-4918-b2ec-923deaa00caf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Wzz.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="ray_trace.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="memhv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx11.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleOV.hpp">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\animationsystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\buttons.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\client_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\engine2_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\host_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\interfaces.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\materialsystem2_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\networksystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\offsets.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\panorama_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\particles_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\pulse_system_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\rendersystemdx11_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\resourcesystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\scenesystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\schemasystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\server_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\soundsystem_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\vphysics2_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset\worldrenderer_dll.hpp">
+      <Filter>Offset\Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK.h">
+      <Filter>Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="ray_trace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

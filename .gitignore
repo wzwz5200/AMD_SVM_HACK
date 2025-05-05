@@ -1,0 +1,39 @@
+.vs/
+x64/
+Wzz/x64/
+
+
+# ==============================
+# Visual Studio 生成的文件和目录
+# ==============================
+## Visual Studio 临时文件和构建输出
+.vs/
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.VC.opendb
+Debug/
+Release/
+x64/
+x86/
+Win32/
+*.obj
+*.pch
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.manifest
+*.tlog
+*.log
+*.idb
+*.ipch
+*.iobj
+*.ipdb
+*.res
+*.aps
+*.tri
+/Wzz/*.tri
