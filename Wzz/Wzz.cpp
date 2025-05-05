@@ -1,6 +1,7 @@
 ﻿// Wzz.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
+
 #include <iostream>
 #include "memhv.h"
 
@@ -207,6 +208,7 @@ int hotkey1 = VK_INSERT;
 
 
 
+static bool showWindow = false; // 默认显示窗口
 
 
 int main()
@@ -235,6 +237,10 @@ int main()
 
     while (!overlay::ShouldQuit)
     {
+        if (GetAsyncKeyState(VK_INSERT) & 1)  // &1 确保只触发一次
+        {
+            showWindow = !showWindow;  // 切换显示状态
+        }
         overlay::Render();
 
         ImGuiIO& io = ImGui::GetIO();
@@ -271,65 +277,68 @@ int main()
         colors[ImGuiCol_SeparatorHovered] = ImVec4(0.3f, 0.3f, 0.4f, 1.0f);
         colors[ImGuiCol_SeparatorActive] = ImVec4(0.4f, 0.4f, 0.5f, 1.0f);
 
-        ImGui::ShowDemoWindow();
+        //ImGui::ShowDemoWindow();
 
         float fps = 1.0f / io.DeltaTime;
         ImGui::SetNextWindowSize(ImVec2(500, 300), ImGuiCond_Once); 
-
-        ImGui::Begin(u8"WZ辅助", nullptr, ImGuiWindowFlags_NoResize);
-        ImGui::Text(u8"FPS: %.2f", fps);
-        ImGui::Checkbox(u8"透视", &ESP);
-        if (ESP)
-        {
- 
+        if (ESP) {
             InitCheat(Client, Server);
-      //      std::cout << MapName;
-        };
-        ImGui::Checkbox(u8"自瞄", &Aimbot);
-        if (Aimbot)
-        {
-         //   const char* items[] = { u8"选项1", u8"选项2", u8"选项3" };
-          
-            ImGui::Text(u8"自瞄键位: ");
-            ImGui::SameLine();
-
-            if (ImGui::Button(u8"等待用户按键")) {
-                waitingForKeybind = true;
-            }
-
-            if (waitingForKeybind) {
-                for (int vk = 1; vk < 256; vk++) {
-                    if (GetAsyncKeyState(vk) & 0x8000) {
-                        aimbotHotkey = vk;
-                        waitingForKeybind = false;
-                        break;
-                    }
-                }
-            }
-
-            ImGui::Checkbox(u8"使用切换模式", &toggleMode); // 勾选=切换模式，取消=长按模式
-            // 显示当前热键名称（可选）
-            ImGui::Text(u8"当前绑定键位: %s", GetKeyName(aimbotHotkey).c_str());
-
-
-          
-            ImGui::Combo("Aim Bone", &current_item, boneNames, IM_ARRAYSIZE(boneNames));
-            if (ImGui::Button(u8"载入地图数据"))
-            {
-               
-              map.load_map(MapName);
-
-            }
-
-            // 显示滑块
-            ImGui::PushItemWidth(200); // 设置滑动条宽度
-            ImGui::SliderFloat(u8"平滑度", &Smoothness, 0.0f, 10.0f);
-            ImGui::SliderFloat("FOV", &FOV, 0.0f, 500.0f);
-            ImGui::PopItemWidth();
+            // 或者你可以考虑把 InitCheat 改个名字，更清晰一点
         }
 
 
-        ImGui::End();
+        if (showWindow) {
+
+            ImGui::Begin(u8"WZ辅助", nullptr, ImGuiWindowFlags_NoResize);
+            ImGui::Text(u8"FPS: %.2f", fps);
+            ImGui::Checkbox(u8"透视", &ESP);
+            ImGui::Checkbox(u8"自瞄", &Aimbot);
+            if (Aimbot)
+            {
+                //   const char* items[] = { u8"选项1", u8"选项2", u8"选项3" };
+
+                ImGui::Text(u8"自瞄键位: ");
+                ImGui::SameLine();
+
+                if (ImGui::Button(u8"等待用户按键")) {
+                    waitingForKeybind = true;
+                }
+
+                if (waitingForKeybind) {
+                    for (int vk = 1; vk < 256; vk++) {
+                        if (GetAsyncKeyState(vk) & 0x8000) {
+                            aimbotHotkey = vk;
+                            waitingForKeybind = false;
+                            break;
+                        }
+                    }
+                }
+
+                ImGui::Checkbox(u8"持续自瞄", &toggleMode); // 勾选=切换模式，取消=长按模式
+                // 显示当前热键名称（可选）
+                ImGui::Text(u8"当前绑定键位: %s", GetKeyName(aimbotHotkey).c_str());
+
+
+
+                ImGui::Combo("Aim Bone", &current_item, boneNames, IM_ARRAYSIZE(boneNames));
+                if (ImGui::Button(u8"载入地图数据"))
+                {
+
+                    map.load_map(MapName);
+
+                }
+
+                // 显示滑块
+                ImGui::PushItemWidth(200); // 设置滑动条宽度
+                ImGui::SliderFloat(u8"平滑度", &Smoothness, 0.0f, 10.0f);
+                ImGui::SliderFloat("FOV", &FOV, 0.0f, 500.0f);
+                ImGui::PopItemWidth();
+            }
+
+
+            ImGui::End();
+        }
+
 
 
         overlay::EndRender();
