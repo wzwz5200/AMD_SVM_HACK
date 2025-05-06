@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "VMProtectSDK.h"
 #include "tool.h"
 #include "math.h"
 #include "SDK.h"
