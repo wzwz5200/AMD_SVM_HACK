@@ -320,9 +320,10 @@ int main()
                 ImGui::Combo("Aim Bone", &current_item, boneNames, IM_ARRAYSIZE(boneNames));
                 if (ImGui::Button(u8"载入地图数据"))
                 {
-                    g_VisChecker = new VisCheck("de_mirage.opt");  // 创建对象
-                 
 
+                    // 判断是否为空字符串
+                  
+                    g_VisChecker = new VisCheck(MapName);
                 }
 
                 // 显示滑块

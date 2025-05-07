@@ -210,8 +210,8 @@ std::string GetMapName(ULONG64 Server)
     char buff[128]{};  // 增加缓冲区大小，确保能完整读取地图名
 
     if (HV::ReadMemory(Server + 0x14A0C70, (ULONG64)&buff, sizeof(buff))) {
-        // 确保字符串是有效的
-        buff[127] = '\0';  // 强制添加字符串终止符
+        // 强制添加字符串终止符
+        buff[127] = '\0';
 
         // 找到第一个非打印字符或空字符的位置
         for (size_t i = 0; i < sizeof(buff); i++) {
@@ -221,7 +221,8 @@ std::string GetMapName(ULONG64 Server)
             }
         }
 
-        return std::string(buff);
+        // 拼接 ".opt" 并返回
+        return std::string(buff) + ".opt";
     }
 
     return "";
