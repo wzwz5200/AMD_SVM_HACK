@@ -143,8 +143,10 @@
     <ClCompile Include="ImGui\imgui_widgets.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="mouse.cpp" />
-    <ClCompile Include="ray_trace.cpp" />
     <ClCompile Include="tool.cpp" />
+    <ClCompile Include="VisCheck\OptimizedGeometry.cpp" />
+    <ClCompile Include="VisCheck\Parser.cpp" />
+    <ClCompile Include="VisCheck\VisCheck.cpp" />
     <ClCompile Include="Wzz.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -180,11 +182,17 @@
     <ClInclude Include="Offset\soundsystem_dll.hpp" />
     <ClInclude Include="Offset\vphysics2_dll.hpp" />
     <ClInclude Include="Offset\worldrenderer_dll.hpp" />
-    <ClInclude Include="ray_trace.h" />
     <ClInclude Include="SDK.h" />
     <ClInclude Include="SimpleOV.hpp" />
     <ClInclude Include="tool.h" />
     <ClInclude Include="vector.h" />
+    <ClInclude Include="VisCheck\Math.hpp" />
+    <ClInclude Include="VisCheck\OptimizedGeometry.h" />
+    <ClInclude Include="VisCheck\Parser.h" />
+    <ClInclude Include="VisCheck\VisCheck.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VisCheck\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

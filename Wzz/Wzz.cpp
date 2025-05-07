@@ -52,8 +52,7 @@ ULONG64   ServerModule = 0;
 //}
 
 
-map_loader map;
-
+VisCheck* g_VisChecker = nullptr;
 std::string GetKeyName(int vk)
 {
     UINT scanCode = MapVirtualKey(vk, MAPVK_VK_TO_VSC) << 16;
@@ -72,8 +71,6 @@ std::string GetKeyName(int vk)
         }
     }
 }
-
-
 
 std::pair<ULONG64, ULONG64> initHV() {
 
@@ -323,8 +320,8 @@ int main()
                 ImGui::Combo("Aim Bone", &current_item, boneNames, IM_ARRAYSIZE(boneNames));
                 if (ImGui::Button(u8"载入地图数据"))
                 {
-
-                    map.load_map(MapName);
+                    g_VisChecker = new VisCheck("de_mirage.opt");  // 创建对象
+                 
 
                 }
 
