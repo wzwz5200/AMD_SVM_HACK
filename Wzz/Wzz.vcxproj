@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ExternalIncludePath>C:\Users\E1qas\Downloads\include\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Users\E1qas\source\repos\Wzz\Wzz\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>C:\Users\E1qas\Downloads\VMProtect\VMProtect\VMProtect 3.8.4.1754\Lib\Windows;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
