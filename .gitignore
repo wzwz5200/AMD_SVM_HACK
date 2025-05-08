@@ -36,4 +36,5 @@ Win32/
 *.res
 *.aps
 *.tri
-/Wzz/*.tri
+*.opt
+/Wzz/*.opt
