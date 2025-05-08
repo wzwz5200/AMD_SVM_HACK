@@ -52,6 +52,8 @@ ULONG64   ServerModule = 0;
 //}
 
 
+
+std::vector<NadePoint> nade;
 VisCheck* g_VisChecker = nullptr;
 std::string GetKeyName(int vk)
 {
@@ -139,6 +141,7 @@ bool ESP = false;
 bool Mouse = false;
 bool AImbot = false;
 bool Aimbot = false;
+bool Helper = false;
 
 int aimbotHotkey = VK_XBUTTON2; // 默认热键：鼠标侧键2
 bool aimbotToggle = false;
@@ -279,7 +282,10 @@ int main()
         float fps = 1.0f / io.DeltaTime;
         ImGui::SetNextWindowSize(ImVec2(500, 300), ImGuiCond_Once); 
         if (ESP) {
+         
             InitCheat(Client, Server);
+            
+          
             // 或者你可以考虑把 InitCheat 改个名字，更清晰一点
         }
 
@@ -289,6 +295,17 @@ int main()
             ImGui::Begin(u8"WZ辅助", nullptr, ImGuiWindowFlags_NoResize);
             ImGui::Text(u8"FPS: %.2f", fps);
             ImGui::Checkbox(u8"透视", &ESP);
+            if (ESP) {
+                ImGui::Checkbox(u8"道具辅助", &Helper);
+            }
+            if (Helper) {
+               
+                if (ImGui::Button(u8"载入点位数据")) {
+
+                    LoadNadeList("nade_list.json", nade);
+               }
+
+            }
             ImGui::Checkbox(u8"自瞄", &Aimbot);
             if (Aimbot)
             {
@@ -333,6 +350,8 @@ int main()
                 ImGui::PopItemWidth();
             }
 
+
+     
 
             ImGui::End();
         }

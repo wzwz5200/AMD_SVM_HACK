@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ExternalIncludePath>C:\Users\E1qas\Downloads\VMProtect\VMProtect\VMProtect 3.8.4.1754\Include\C;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Users\E1qas\Downloads\include\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>C:\Users\E1qas\Downloads\VMProtect\VMProtect\VMProtect 3.8.4.1754\Lib\Windows;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hack.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
     <ClCompile Include="ImGui\imgui_demo.cpp" />
     <ClCompile Include="ImGui\imgui_draw.cpp" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hack.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="ImGui\imconfig.h" />
     <ClInclude Include="ImGui\imgui.h" />
     <ClInclude Include="ImGui\imgui_impl_dx11.h" />
@@ -182,6 +184,7 @@
     <ClInclude Include="Offset\soundsystem_dll.hpp" />
     <ClInclude Include="Offset\vphysics2_dll.hpp" />
     <ClInclude Include="Offset\worldrenderer_dll.hpp" />
+    <ClInclude Include="position.h" />
     <ClInclude Include="SDK.h" />
     <ClInclude Include="SimpleOV.hpp" />
     <ClInclude Include="tool.h" />

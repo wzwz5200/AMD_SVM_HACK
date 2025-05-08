@@ -63,7 +63,16 @@
     <ClCompile Include="mouse.cpp">
       <Filter>Mouse</Filter>
     </ClCompile>
-    <ClCompile Include="ray_trace.cpp">
+    <ClCompile Include="VisCheck\OptimizedGeometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VisCheck\Parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VisCheck\VisCheck.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -173,11 +182,29 @@
     <ClInclude Include="mouse.h">
       <Filter>Mouse</Filter>
     </ClInclude>
-    <ClInclude Include="ray_trace.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="VisCheck\Math.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VisCheck\OptimizedGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VisCheck\Parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VisCheck\VisCheck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="position.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VisCheck\README.md" />
   </ItemGroup>
 </Project>

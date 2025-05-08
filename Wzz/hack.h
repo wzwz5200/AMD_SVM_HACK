@@ -1,11 +1,17 @@
 ﻿#pragma once
 #include "tool.h"
 #include "math.h"
+#include "Helper.h"
 #include "SDK.h"
 #include "VisCheck/VisCheck.h"
+#include "position.h"
 void InitCheat(ULONG64 Client,ULONG64 ServerModule);
 
+void GHelperbool(const Vector3& worldPosition,std::string Name, const ViewMatrix& viewMatrix, int screenWidth, int screenHeight);
+
+extern  std::vector<NadePoint> nade;
 extern bool Aimbot;
+extern bool Helper;
 extern  int current_item;
 extern float FOV;
 
