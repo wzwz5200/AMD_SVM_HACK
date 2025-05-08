@@ -23,7 +23,7 @@ uintptr_t GetPawnFromController(ULONG64 Client, int index)
         return 0;
 
     // Step 3: 读取 Pawn Handle（注意是 4 字节整数）
-    uint32_t pawnHandle = HV::Read<uint32_t>(playerController + 0x814);
+    uint32_t pawnHandle = HV::Read<uint32_t>(playerController + cs2_dumper::schemas::client_dll::CCSPlayerController::m_hPlayerPawn);
     if ((pawnHandle & 0x7FFF) == 0x7FFF)
         return 0;
 
@@ -90,14 +90,14 @@ PlayerPosition GetPlayerPosition(ULONG64 Client, uintptr_t playerController)
 {
     PlayerPosition pos = { {0,0,0}, {0,0,0} };
 
-    auto playerPawn = HV::Read<uintptr_t>(playerController + 0x814);
+    auto playerPawn = HV::Read<uintptr_t>(playerController + cs2_dumper::schemas::client_dll::CCSPlayerController::m_hPlayerPawn);
     if (playerPawn == 0) return pos;
 
     auto pawnAddress = GetBaseEntity(Client, playerPawn & 0x7FFF);
     if (pawnAddress == 0) return pos;
 
     // 获取基础位置
-    Vector3 origin = HV::Read<Vector3>(pawnAddress + 0x1324);
+    Vector3 origin = HV::Read<Vector3>(pawnAddress + cs2_dumper::schemas::client_dll::C_BasePlayerPawn::m_vOldOrigin);
     Vector3 viewOffset = HV::Read<Vector3>(pawnAddress + cs2_dumper::schemas::client_dll::C_BaseModelEntity::m_vecViewOffset);
 
     // 计算头部和脚部位置
@@ -121,7 +121,7 @@ int GetPlayerHealth(ULONG64 Client, uintptr_t playerController)
 {
     if (playerController == 0) return 0;
 
-    auto playerPawn = HV::Read<uintptr_t>(playerController + 0x814);
+    auto playerPawn = HV::Read<uintptr_t>(playerController + cs2_dumper::schemas::client_dll::CCSPlayerController::m_hPlayerPawn);
     if (playerPawn == 0) return 0;
 
     if ((playerPawn & 0x7FFF) == 0x7FFF) return 0;
@@ -129,14 +129,14 @@ int GetPlayerHealth(ULONG64 Client, uintptr_t playerController)
     auto pawnAddress = GetBaseEntity(Client, playerPawn & 0x7FFF);
     if (pawnAddress == 0) return 0;
 
-    int health = HV::Read<int>(pawnAddress + 0x344);
+    int health = HV::Read<int>(pawnAddress + cs2_dumper::schemas::client_dll::C_BaseEntity::m_iHealth);
     return (health >= 0 && health <= 100) ? health : 0;
 }
 
 std::string GetName(uintptr_t playerController)
 {
     std::string name;
-    uintptr_t temp = HV::Read<uintptr_t>(playerController + 0x770);
+    uintptr_t temp = HV::Read<uintptr_t>(playerController + cs2_dumper::schemas::client_dll::CCSPlayerController::m_sSanitizedPlayerName);
     if (temp) {
         char buff[50]{};
         HV::ReadMemory(temp, (ULONG64)&buff, sizeof(buff));  // sizeof(buff) == 50
@@ -209,7 +209,7 @@ std::string GetMapName(ULONG64 Server)
 {
     char buff[128]{};  // 增加缓冲区大小，确保能完整读取地图名
 
-    if (HV::ReadMemory(Server + 0x14A0C70, (ULONG64)&buff, sizeof(buff))) {
+    if (HV::ReadMemory(Server + 0x14A6080, (ULONG64)&buff, sizeof(buff))) {
         // 强制添加字符串终止符
         buff[127] = '\0';
 
