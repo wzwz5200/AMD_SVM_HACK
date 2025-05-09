@@ -209,7 +209,7 @@ std::string GetMapName(ULONG64 Server)
 {
     char buff[128]{};  // 增加缓冲区大小，确保能完整读取地图名
 
-    if (HV::ReadMemory(Server + 0x14A6080, (ULONG64)&buff, sizeof(buff))) {
+    if (HV::ReadMemory(Server + 0x14A5FC0, (ULONG64)&buff, sizeof(buff))) {
         // 强制添加字符串终止符
         buff[127] = '\0';
 
