@@ -12,10 +12,10 @@ bool LoadNadeList(const std::string& filename, std::vector<NadePoint>& nadePoint
         file >> j;
 
         for (const auto& item : j) {
-            if (item.contains("name") && item.contains("POSs") && item.contains("POSs1")) {
+            if (item.contains("name") && item.contains("POSs") && item.contains("POSs1") && item.contains("GrenadeName")) {
                 NadePoint np;
                 np.name = item["name"];
-
+                np.GrenadeName = item["GrenadeName"];
                 np.POSs = {
                     item["POSs"][0],
                     item["POSs"][1],

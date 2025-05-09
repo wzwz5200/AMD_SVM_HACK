@@ -1,6 +1,7 @@
 [
     {
-      "name": "拱门",
+      "name": "拱门烟",
+      "GrenadeName" : "weapon_smokegrenade",
       "POSs": [1653.22, 1947.47, 4.48587],
       "POSs1": [1312.78, 1567.32, 223.004]
     }

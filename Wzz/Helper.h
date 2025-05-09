@@ -9,6 +9,7 @@ using json = nlohmann::json;
 
 struct NadePoint {
     std::string name;  // 点位名称
+    std::string  GrenadeName;  // 投掷物名称
     Vector3 POSs;      // 站位坐标
     Vector3 POSs1;     // 瞄准坐标
 };

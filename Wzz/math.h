@@ -84,3 +84,6 @@ void drawFovCircle(float radius);
 
 float getDistanceToCenter(const Vector3& screenPos);
 std::string GetMapName(ULONG64 Server);
+
+std::string GetWeaponName( uintptr_t playerPawn);
+

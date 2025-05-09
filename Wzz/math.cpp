@@ -227,3 +227,27 @@ std::string GetMapName(ULONG64 Server)
 
     return "";
 }
+
+std::string GetWeaponName(uintptr_t playerPawn)
+{
+    uintptr_t clipping_weapon = HV::Read<uintptr_t>(playerPawn + cs2_dumper::schemas::client_dll::C_CSPlayerPawnBase::m_pClippingWeapon);
+    if (!clipping_weapon) return "unknown";
+
+    uintptr_t weapon_data = HV::Read<uintptr_t>(clipping_weapon + 0x10);
+
+
+    // Read weapon name pointer
+    uintptr_t name_ptr =HV::Read<uintptr_t>(weapon_data + 0x20);
+    if (!name_ptr) return  "unknown";
+
+    std::string current_name;
+    constexpr size_t max_len = 64;  // get string
+    for (size_t i = 0; i < max_len; ++i) {
+        char ch = HV::Read<char>(name_ptr + i);
+        if (ch == '\0') break;
+        current_name += ch;
+    }
+
+
+    return current_name;
+}
