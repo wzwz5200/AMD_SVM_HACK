@@ -10,4 +10,4 @@ Please update the offset manually  The AimBot feature uses the Logitech driver p
 - [logitech-cve](https://github.com/ekknod/logitech-cve)
 
 
-![项目Logo](./img/img.png)
+![项目](./img/img.png)
