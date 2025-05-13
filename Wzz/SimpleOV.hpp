@@ -97,9 +97,12 @@ bool overlay::CreateDeviceD3D(HWND hWnd)
     SetWindowPos(overlay::Window, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
     return true;
 }
+const double target_frametime = 1.0 / 140.0; //ÏÞÖÆfps
+
 
 void overlay::SetupWindow()
 {
+ 
     SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
     overlay::wcex = {
         sizeof(WNDCLASSEXA),
@@ -152,6 +155,7 @@ void overlay::CloseOverlay()
 
 VOID overlay::Render()
 {
+    auto frame_start = std::chrono::high_resolution_clock::now();
     MSG msg;
     while (::PeekMessage(&msg, nullptr, 0U, 0U, PM_REMOVE))
     {
@@ -193,6 +197,11 @@ VOID overlay::Render()
     ImGui_ImplDX11_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
+    auto frame_end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = frame_end - frame_start;
+    double sleep_time = target_frametime - elapsed.count();
+    if (sleep_time > 0)
+        std::this_thread::sleep_for(std::chrono::duration<double>(sleep_time));
 }
 
 VOID overlay::EndRender()

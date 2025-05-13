@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2025-05-09 02:10:08.918962500 UTC
+// 2025-05-12 23:59:02.789323600 UTC
 
 #pragma once
 
@@ -19,7 +19,7 @@ namespace cs2_dumper {
             constexpr std::ptrdiff_t GameClientExports001 = 0x183FB98;
             constexpr std::ptrdiff_t LegacyGameUI001 = 0x18601D0;
             constexpr std::ptrdiff_t Source2Client002 = 0x1A59560;
-            constexpr std::ptrdiff_t Source2ClientConfig001 = 0x19F1F90;
+            constexpr std::ptrdiff_t Source2ClientConfig001 = 0x19F1FA0;
             constexpr std::ptrdiff_t Source2ClientPrediction001 = 0x184AF50;
             constexpr std::ptrdiff_t Source2ClientUI001 = 0x185E700;
         }
@@ -162,14 +162,14 @@ namespace cs2_dumper {
         }
         // Module: server.dll
         namespace server_dll {
-            constexpr std::ptrdiff_t EmptyWorldService001_Server = 0x1369D80;
+            constexpr std::ptrdiff_t EmptyWorldService001_Server = 0x1369D70;
             constexpr std::ptrdiff_t EntitySubclassUtilsV001 = 0x131A3D0;
-            constexpr std::ptrdiff_t NavGameTest001 = 0x1408E58;
-            constexpr std::ptrdiff_t ServerToolsInfo_001 = 0x13BE7C8;
-            constexpr std::ptrdiff_t Source2GameClients001 = 0x13B8690;
+            constexpr std::ptrdiff_t NavGameTest001 = 0x1408E48;
+            constexpr std::ptrdiff_t ServerToolsInfo_001 = 0x13BE7B8;
+            constexpr std::ptrdiff_t Source2GameClients001 = 0x13B8680;
             constexpr std::ptrdiff_t Source2GameDirector001 = 0x14EC6A0;
-            constexpr std::ptrdiff_t Source2GameEntities001 = 0x13BE6F0;
-            constexpr std::ptrdiff_t Source2Server001 = 0x13BE560;
+            constexpr std::ptrdiff_t Source2GameEntities001 = 0x13BE6E0;
+            constexpr std::ptrdiff_t Source2Server001 = 0x13BE550;
             constexpr std::ptrdiff_t Source2ServerConfig001 = 0x15B7188;
             constexpr std::ptrdiff_t customnavsystem001 = 0x12FEB48;
         }
@@ -210,9 +210,9 @@ namespace cs2_dumper {
         }
         // Module: tier0.dll
         namespace tier0_dll {
-            constexpr std::ptrdiff_t TestScriptMgr001 = 0x37EA70;
-            constexpr std::ptrdiff_t VEngineCvar007 = 0x38D4B0;
-            constexpr std::ptrdiff_t VProcessUtils002 = 0x37E980;
+            constexpr std::ptrdiff_t TestScriptMgr001 = 0x37EA80;
+            constexpr std::ptrdiff_t VEngineCvar007 = 0x38D4E0;
+            constexpr std::ptrdiff_t VProcessUtils002 = 0x37E990;
             constexpr std::ptrdiff_t VStringTokenSystem001 = 0x3A5F00;
         }
         // Module: v8system.dll
