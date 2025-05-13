@@ -1,5 +1,4 @@
 #include "Helper.h"
-
 bool LoadNadeList(const std::string& filename, std::vector<NadePoint>& nadePoints) {
     std::ifstream file(filename);
     if (!file.is_open()) {
@@ -12,20 +11,35 @@ bool LoadNadeList(const std::string& filename, std::vector<NadePoint>& nadePoint
         file >> j;
 
         for (const auto& item : j) {
-            if (item.contains("name") && item.contains("POSs") && item.contains("POSs1") && item.contains("GrenadeName")) {
+            if (item.contains("name") &&
+                item.contains("GrenadeName") &&
+                item.contains("POS") &&
+                item.contains("Angle") &&
+                item.contains("Eyes"))
+            {
                 NadePoint np;
-                np.name = item["name"];
-                np.GrenadeName = item["GrenadeName"];
-                np.POSs = {
-                    item["POSs"][0],
-                    item["POSs"][1],
-                    item["POSs"][2]
+                np.name = item["name"].get<std::string>();
+                np.GrenadeName = item["GrenadeName"].get<std::string>();
+
+                // Vector3 POS
+                np.POS = {
+                    item["POS"][0].get<float>(),
+                    item["POS"][1].get<float>(),
+                    item["POS"][2].get<float>()
                 };
 
-                np.POSs1 = {
-                    item["POSs1"][0],
-                    item["POSs1"][1],
-                    item["POSs1"][2]
+                // QAngle POSs1
+                np.Angle = {
+                    item["Angle"][0].get<float>(),
+                    item["Angle"][1].get<float>(),
+                    item["Angle"][2].get<float>()
+                };
+
+                // Vector3 Eyes
+                np.Eyes = {
+                    item["Eyes"][0].get<float>(),
+                    item["Eyes"][1].get<float>(),
+                    item["Eyes"][2].get<float>()
                 };
 
                 nadePoints.push_back(np);

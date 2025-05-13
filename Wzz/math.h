@@ -5,10 +5,19 @@
 #include "memhv.h"
 #include "mouse.h"
 #include "ImGui/imgui.h"
+#include "vector.h"
 
 struct Vector3 {
     float x, y, z;
 
+    Vector3 operator*(float scalar) const {
+        return { x * scalar, y * scalar, z * scalar };
+    }
+
+    // 向量加向量
+    Vector3 operator+(const Vector3& other) const {
+        return { x + other.x, y + other.y, z + other.z };
+    }
 };
 
 struct Vector2 {
@@ -86,4 +95,4 @@ float getDistanceToCenter(const Vector3& screenPos);
 std::string GetMapName(ULONG64 Server);
 
 std::string GetWeaponName( uintptr_t playerPawn);
-
+Vector3 AngleToWorldPosition(const Vector3& eyePos, const QAngle& viewAngles, float distance = 1000.0f);

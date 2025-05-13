@@ -251,3 +251,17 @@ std::string GetWeaponName(uintptr_t playerPawn)
 
     return current_name;
 }
+
+Vector3 AngleToWorldPosition(const Vector3& eyePos, const QAngle& viewAngles, float distance)
+{
+    Vector3 direction;
+
+    float pitch = DEG2RAD(viewAngles.x);  // pitch（上下）
+    float yaw = DEG2RAD(viewAngles.y);  // yaw（左右）
+
+    direction.x = cos(pitch) * cos(yaw);
+    direction.y = cos(pitch) * sin(yaw);
+    direction.z = -sin(pitch);  // Source引擎里Pitch向下是正角度，所以要负号
+
+    return eyePos + direction * distance;
+}

@@ -8,7 +8,7 @@
 void InitCheat(ULONG64 Client,ULONG64 ServerModule);
 
 void GHelperbool(const Vector3& worldPosition,std::string Name, const ViewMatrix& viewMatrix, int screenWidth, int screenHeight);
-
+void AngleHelper(const Vector3& EyePosition, QAngle angles, std::string Name, const ViewMatrix& viewMatrix, int screenWidth, int screenHeight);
 extern  std::vector<NadePoint> nade;
 extern bool Aimbot;
 extern bool Helper;

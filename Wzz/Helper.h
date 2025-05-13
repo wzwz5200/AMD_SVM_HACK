@@ -10,8 +10,9 @@ using json = nlohmann::json;
 struct NadePoint {
     std::string name;  // 点位名称
     std::string  GrenadeName;  // 投掷物名称
-    Vector3 POSs;      // 站位坐标
-    Vector3 POSs1;     // 瞄准坐标
+    Vector3 POS;      // 站位坐标
+    QAngle Angle;     // 瞄准角度
+    Vector3 Eyes; //人物摄像机坐标
 };
 
 bool LoadNadeList(const std::string& filename, std::vector<NadePoint>& nadePoints);
