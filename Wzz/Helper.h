@@ -16,3 +16,9 @@ struct NadePoint {
 };
 
 bool LoadNadeList(const std::string& filename, std::vector<NadePoint>& nadePoints);
+void to_json(json& j, const Vector3& v);
+void to_json(json& j, const QAngle& a);
+void to_json(json& j, const NadePoint& p);
+void from_json(const nlohmann::json& j, Vector3& v);
+void from_json(const nlohmann::json& j, QAngle& a);
+void from_json(const nlohmann::json& j, NadePoint& p);

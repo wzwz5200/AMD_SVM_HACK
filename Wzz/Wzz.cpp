@@ -142,6 +142,8 @@ bool Mouse = false;
 bool AImbot = false;
 bool Aimbot = false;
 bool Helper = false;
+bool RecordHelper = false;
+bool hasRecorded = false;  // 是否已经执行记录逻辑
 
 int aimbotHotkey = VK_XBUTTON2; // 默认热键：鼠标侧键2
 bool aimbotToggle = false;
@@ -304,6 +306,13 @@ int main()
 
                     LoadNadeList("nade_list.json", nade);
                }
+                if (ImGui::Button(u8"记录点位数据")) {
+
+                    RecordHelper = true;
+                    hasRecorded = false;  // 每次点击按钮，允许重新记录一次
+
+                  
+                }
 
             }
             ImGui::Checkbox(u8"自瞄", &Aimbot);

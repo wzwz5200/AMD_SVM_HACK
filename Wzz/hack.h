@@ -12,6 +12,8 @@ void AngleHelper(const Vector3& EyePosition, QAngle angles, std::string Name, co
 extern  std::vector<NadePoint> nade;
 extern bool Aimbot;
 extern bool Helper;
+extern bool RecordHelper;
+extern bool hasRecorded;  // 是否已经执行记录逻辑
 extern  int current_item;
 extern float FOV;
 
