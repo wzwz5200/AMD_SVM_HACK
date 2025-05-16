@@ -300,8 +300,13 @@ int main()
             if (ESP) {
                 ImGui::Checkbox(u8"道具辅助", &Helper);
             }
+          
+             
+                // 你自己的键盘输入逻辑
+           
+           
             if (Helper) {
-               
+
                 if (ImGui::Button(u8"载入点位数据")) {
 
                     LoadNadeList("nade_list.json", nade);
@@ -313,6 +318,8 @@ int main()
 
                   
                 }
+
+              
 
             }
             ImGui::Checkbox(u8"自瞄", &Aimbot);
